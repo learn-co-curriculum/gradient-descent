@@ -45,6 +45,13 @@ revenues = list(map(lambda show: show['revenue'], shows))
 build_regression_line(budgets, revenues)
 ```
 
+
+
+
+    {'b': 133.33333333333326, 'm': 1.4166666666666667}
+
+
+
 Turning this into a regression formula, we have the following.
 
 
@@ -70,6 +77,14 @@ scatter_trace = trace_values(budgets, revenues)
 plot([regression_trace, scatter_trace])
 ```
 
+
+<script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}</script>
+
+
+
+<div id="4efc3974-8a3d-4ed8-b037-5f9193cc1850" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("4efc3974-8a3d-4ed8-b037-5f9193cc1850", [{"mode": "lines", "name": "line function", "x": [100, 200, 250, 325, 400], "y": [275.03000000000003, 416.73, 487.58000000000004, 593.855, 700.1300000000001], "type": "scatter", "uid": "5e34f252-30d0-11e9-989e-88e9fe4c5d44"}, {"mode": "markers", "name": "data", "text": [], "x": [100, 200, 250, 325, 400], "y": [275, 300, 550, 525, 700], "type": "scatter", "uid": "5e34f3c6-30d0-11e9-b0a2-88e9fe4c5d44"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+
+
 ### Evaluating the regression line
 
 Ok, now we add in our functions for displaying the errors for our graph.
@@ -88,7 +103,7 @@ def error_line_trace(x_values, y_values, m, b, x):
     y = y_actual(x, x_values, y_values)
     name = 'error at ' + str(x)
     error_value = y - y_hat
-    return {'x': [x, x], 'y': [y, y_hat], 'mode': 'line', 'marker': {'color': 'red'}, 'name': name, 'text': [error_value], 'textposition':'right'}
+    return {'x': [x, x], 'y': [y, y_hat], 'mode': 'lines', 'marker': {'color': 'red'}, 'name': name, 'text': [error_value], 'textposition':'top right'}
 
 def error_line_traces(x_values, y_values, m, b):
     return list(map(lambda x_value: error_line_trace(x_values, y_values, m, b, x_value), x_values))
@@ -96,6 +111,10 @@ def error_line_traces(x_values, y_values, m, b):
 errors = error_line_traces(budgets, revenues, 1.417, 133.33)
 plot([scatter_trace, regression_trace, *errors])
 ```
+
+
+<div id="32b63be6-5aef-4562-b199-55b888e815be" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("32b63be6-5aef-4562-b199-55b888e815be", [{"mode": "markers", "name": "data", "text": [], "x": [100, 200, 250, 325, 400], "y": [275, 300, 550, 525, 700], "type": "scatter", "uid": "7bba2f90-30d0-11e9-8c9e-88e9fe4c5d44"}, {"mode": "lines", "name": "line function", "x": [100, 200, 250, 325, 400], "y": [275.03000000000003, 416.73, 487.58000000000004, 593.855, 700.1300000000001], "type": "scatter", "uid": "7bba30da-30d0-11e9-b717-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 100", "text": ["-0.03000000000002956"], "textposition": "top right", "x": [100, 100], "y": [275, 275.03000000000003], "type": "scatter", "uid": "7bba318c-30d0-11e9-88e0-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 200", "text": ["-116.73000000000002"], "textposition": "top right", "x": [200, 200], "y": [300, 416.73], "type": "scatter", "uid": "7bba3224-30d0-11e9-908f-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 250", "text": ["62.41999999999996"], "textposition": "top right", "x": [250, 250], "y": [550, 487.58000000000004], "type": "scatter", "uid": "7bba32b0-30d0-11e9-88ce-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 325", "text": ["-68.85500000000002"], "textposition": "top right", "x": [325, 325], "y": [525, 593.855], "type": "scatter", "uid": "7bba3334-30d0-11e9-8168-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 400", "text": ["-0.13000000000010914"], "textposition": "top right", "x": [400, 400], "y": [700, 700.1300000000001], "type": "scatter", "uid": "7bba33b4-30d0-11e9-916b-88e9fe4c5d44"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+
 
 From there, we calculate the `residual sum of squared errors` and the `root mean squared error`.
 
@@ -123,6 +142,13 @@ residual_sum_squares(budgets, revenues, 1.417, 133.33) # 22263.18
 root_mean_squared_error(budgets, revenues, 1.417, 133.33) # 29.84
 ```
 
+
+
+
+    29.84
+
+
+
 ### Moving towards gradient descent
 
 Now that we have the residual sum of squares function to evaluate the accuracy of our regression line, we can simply try out different regression lines and use the regression line that has the lowest RSS.  The regression line that produces the lowest RSS for a given dataset is called the "best fit" line for that dataset.  
@@ -147,6 +173,13 @@ Ok, so we have a regression line of $\overline{y} = \overline{m}x + \overline{b}
 residual_sum_squares(budgets, revenues, 1.417, 140)
 ```
 
+
+
+
+    24130.78
+
+
+
 Now let's the RSS for a variety of $b$ values.
 
 
@@ -169,10 +202,38 @@ regression_lines
 ```
 
 
+
+
+    [(1.417, 70),
+     (1.417, 80),
+     (1.417, 90),
+     (1.417, 100),
+     (1.417, 110),
+     (1.417, 120),
+     (1.417, 130),
+     (1.417, 140)]
+
+
+
+
 ```python
 rss_lines = residual_sum_squares_errors(budgets, revenues, regression_lines)
 rss_lines
 ```
+
+
+
+
+    [[1.417, 70, 26696.0],
+     [1.417, 80, 23330.0],
+     [1.417, 90, 20963.0],
+     [1.417, 100, 19597.0],
+     [1.417, 110, 19230.0],
+     [1.417, 120, 19864.0],
+     [1.417, 130, 21497.0],
+     [1.417, 140, 24131.0]]
+
+
 
 | b        | residual sum of squared           | 
 | ------------- |:-------------:| 
@@ -217,9 +278,17 @@ from graph import m_b_trace, trace_values, plot
 init_notebook_mode(connected=True)
 
 
-cost_curve_trace = trace_values(b_values, rss_errors, mode="line")
+cost_curve_trace = trace_values(b_values, rss_errors, mode="lines")
 plot([cost_curve_trace])
 ```
+
+
+<script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}</script>
+
+
+
+<div id="c4e949fd-c6ac-4148-bc81-31bd2a05011d" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("c4e949fd-c6ac-4148-bc81-31bd2a05011d", [{"mode": "lines", "name": "data", "text": [], "x": [70, 80, 90, 100, 110, 120, 130, 140], "y": [26696.0, 23330.0, 20963.0, 19597.0, 19230.0, 19864.0, 21497.0, 24131.0], "type": "scatter", "uid": "82e93e34-30d0-11e9-90a4-88e9fe4c5d44"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+
 
 The graph above is called the **cost curve**.  It is a plot of the RSS for different values of $b$.    The curve demonstrates that when $b$ is between 100 and 120, the RSS is lowest.  This technique of optimizing towards a minimum value is called *gradient descent*.  Here, we *descend* along a cost curve.  As we change our variable, we need to stop when the value of our RSS no longer decreases.
 
