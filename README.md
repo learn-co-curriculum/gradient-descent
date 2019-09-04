@@ -48,7 +48,7 @@ build_regression_line(budgets, revenues)
 
 
 
-    {'b': 133.33333333333326, 'm': 1.4166666666666667}
+    {'m': 1.4166666666666667, 'b': 133.33333333333326}
 
 
 
@@ -82,7 +82,11 @@ plot([regression_trace, scatter_trace])
 
 
 
-<div id="4efc3974-8a3d-4ed8-b037-5f9193cc1850" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("4efc3974-8a3d-4ed8-b037-5f9193cc1850", [{"mode": "lines", "name": "line function", "x": [100, 200, 250, 325, 400], "y": [275.03000000000003, 416.73, 487.58000000000004, 593.855, 700.1300000000001], "type": "scatter", "uid": "5e34f252-30d0-11e9-989e-88e9fe4c5d44"}, {"mode": "markers", "name": "data", "text": [], "x": [100, 200, 250, 325, 400], "y": [275, 300, 550, 525, 700], "type": "scatter", "uid": "5e34f3c6-30d0-11e9-b0a2-88e9fe4c5d44"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}</script>
+
+
+
+<div id="8cd4d449-0da2-48b3-9e4b-2f15afce64fe" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("8cd4d449-0da2-48b3-9e4b-2f15afce64fe", [{"mode": "lines", "name": "line function", "x": [100, 200, 250, 325, 400], "y": [275.03000000000003, 416.73, 487.58000000000004, 593.855, 700.1300000000001], "type": "scatter", "uid": "7e778308-cf37-11e9-b5e7-3af9d3ad3e0b"}, {"mode": "markers", "name": "data", "text": [], "x": [100, 200, 250, 325, 400], "y": [275, 300, 550, 525, 700], "type": "scatter", "uid": "7e77843e-cf37-11e9-9ea4-3af9d3ad3e0b"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 ### Evaluating the regression line
@@ -113,7 +117,7 @@ plot([scatter_trace, regression_trace, *errors])
 ```
 
 
-<div id="32b63be6-5aef-4562-b199-55b888e815be" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("32b63be6-5aef-4562-b199-55b888e815be", [{"mode": "markers", "name": "data", "text": [], "x": [100, 200, 250, 325, 400], "y": [275, 300, 550, 525, 700], "type": "scatter", "uid": "7bba2f90-30d0-11e9-8c9e-88e9fe4c5d44"}, {"mode": "lines", "name": "line function", "x": [100, 200, 250, 325, 400], "y": [275.03000000000003, 416.73, 487.58000000000004, 593.855, 700.1300000000001], "type": "scatter", "uid": "7bba30da-30d0-11e9-b717-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 100", "text": ["-0.03000000000002956"], "textposition": "top right", "x": [100, 100], "y": [275, 275.03000000000003], "type": "scatter", "uid": "7bba318c-30d0-11e9-88e0-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 200", "text": ["-116.73000000000002"], "textposition": "top right", "x": [200, 200], "y": [300, 416.73], "type": "scatter", "uid": "7bba3224-30d0-11e9-908f-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 250", "text": ["62.41999999999996"], "textposition": "top right", "x": [250, 250], "y": [550, 487.58000000000004], "type": "scatter", "uid": "7bba32b0-30d0-11e9-88ce-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 325", "text": ["-68.85500000000002"], "textposition": "top right", "x": [325, 325], "y": [525, 593.855], "type": "scatter", "uid": "7bba3334-30d0-11e9-8168-88e9fe4c5d44"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 400", "text": ["-0.13000000000010914"], "textposition": "top right", "x": [400, 400], "y": [700, 700.1300000000001], "type": "scatter", "uid": "7bba33b4-30d0-11e9-916b-88e9fe4c5d44"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="817a929b-fdec-4db3-b5e7-327dd76ed45e" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("817a929b-fdec-4db3-b5e7-327dd76ed45e", [{"mode": "markers", "name": "data", "text": [], "x": [100, 200, 250, 325, 400], "y": [275, 300, 550, 525, 700], "type": "scatter", "uid": "8016ed48-cf37-11e9-a7ec-3af9d3ad3e0b"}, {"mode": "lines", "name": "line function", "x": [100, 200, 250, 325, 400], "y": [275.03000000000003, 416.73, 487.58000000000004, 593.855, 700.1300000000001], "type": "scatter", "uid": "8016ee7e-cf37-11e9-baa5-3af9d3ad3e0b"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 100", "text": ["-0.03000000000002956"], "textposition": "top right", "x": [100, 100], "y": [275, 275.03000000000003], "type": "scatter", "uid": "8016ef1e-cf37-11e9-b914-3af9d3ad3e0b"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 200", "text": ["-116.73000000000002"], "textposition": "top right", "x": [200, 200], "y": [300, 416.73], "type": "scatter", "uid": "8016ef98-cf37-11e9-987e-3af9d3ad3e0b"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 250", "text": ["62.41999999999996"], "textposition": "top right", "x": [250, 250], "y": [550, 487.58000000000004], "type": "scatter", "uid": "8016f00c-cf37-11e9-a56f-3af9d3ad3e0b"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 325", "text": ["-68.85500000000002"], "textposition": "top right", "x": [325, 325], "y": [525, 593.855], "type": "scatter", "uid": "8016f07a-cf37-11e9-a04f-3af9d3ad3e0b"}, {"marker": {"color": "red"}, "mode": "lines", "name": "error at 400", "text": ["-0.13000000000010914"], "textposition": "top right", "x": [400, 400], "y": [700, 700.1300000000001], "type": "scatter", "uid": "8016f0e8-cf37-11e9-bef9-3af9d3ad3e0b"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 From there, we calculate the `residual sum of squared errors` and the `root mean squared error`.
@@ -166,7 +170,7 @@ We'll eventually tweak and improve upon that process, but for now it will do.  I
 
 #### Updating the regression line to improve accuracy
 
-Ok, so we have a regression line of $\overline{y} = \overline{m}x + \overline{b} $, and we started with values of $m = 1.417 $ and $b = 133.33 $.  Then seeing how well this regression line matched our dataset, we calculated that $ RSS = 22,263.18 $.  Our next step is to plug in different values of $b$ and see how RSS changes.  Let's try $b$ = 140 instead of $133.33$.
+Ok, so we have a regression line of $\hat{y} = mx + b $, and we started with values of $m = 1.417 $ and $b = 133.33 $.  Then seeing how well this regression line matched our dataset, we calculated that $ RSS = 22,263.18 $.  Our next step is to plug in different values of $b$ and see how RSS changes.  Let's try $b$ = 140 instead of $133.33$.
 
 
 ```python
@@ -265,9 +269,6 @@ b_values = list(range(70, 150, 10))
 # rss_lines[0] => [1.417, 70, 26696.0]
 # so we collect the rss errors for each regression line  
 rss_errors = list(map(lambda line: line[-1], rss_lines))
-
-
-
 ```
 
 
@@ -287,7 +288,7 @@ plot([cost_curve_trace])
 
 
 
-<div id="c4e949fd-c6ac-4148-bc81-31bd2a05011d" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("c4e949fd-c6ac-4148-bc81-31bd2a05011d", [{"mode": "lines", "name": "data", "text": [], "x": [70, 80, 90, 100, 110, 120, 130, 140], "y": [26696.0, 23330.0, 20963.0, 19597.0, 19230.0, 19864.0, 21497.0, 24131.0], "type": "scatter", "uid": "82e93e34-30d0-11e9-90a4-88e9fe4c5d44"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="55300798-1d84-41d4-ad1f-419b8a0f2bc2" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("55300798-1d84-41d4-ad1f-419b8a0f2bc2", [{"mode": "lines", "name": "data", "text": [], "x": [70, 80, 90, 100, 110, 120, 130, 140], "y": [26696.0, 23330.0, 20963.0, 19597.0, 19230.0, 19864.0, 21497.0, 24131.0], "type": "scatter", "uid": "89170f2c-cf37-11e9-8eb8-3af9d3ad3e0b"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 The graph above is called the **cost curve**.  It is a plot of the RSS for different values of $b$.    The curve demonstrates that when $b$ is between 100 and 120, the RSS is lowest.  This technique of optimizing towards a minimum value is called *gradient descent*.  Here, we *descend* along a cost curve.  As we change our variable, we need to stop when the value of our RSS no longer decreases.
