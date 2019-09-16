@@ -8,7 +8,7 @@
 
 ### Introduction
 
-In the previous section we saw how after choosing the slope and y-intercept values of a regression line, we can calculate the residual sum of squares (RSS) and related root mean squared error.  We can use either the RSS or RMSE to calculate the accuracy of a line.  In this lesson we'll proceed with RSS as it's the simpler of the two.
+In the previous section, we saw how after choosing the slope and y-intercept values of a regression line, we can calculate the residual sum of squares (RSS) and related root mean squared error.  We can use either the RSS or RMSE to calculate the accuracy of a line.  In this lesson we'll proceed with RSS as it's the simpler of the two.
 
 Once calculating the accuracy of a line, we are pretty close to improving upon a line by minimizing the RSS.  This is the task of the gradient descent technique.  But before learning about gradient descent, let's review and ensure that we understand how to evaluate how our line fits our data.  
 
