@@ -252,7 +252,7 @@ rss_lines
 
 Notice what the above chart represents.  While keeping our value of $m$ fixed at 1.417, we moved towards a smaller residual sum of squares (RSS) by changing our value of $b$, our y-intercept. 
 
-Setting $b$ to 130 produced a lower error than at 140.  We kept moving our $b$ value lower until we set $b$ = 100, at which point our error began to increase.  Therefore, we know that a value of $b$ between 110 and 100 produces the smallest RSS for our data while $m = 1.417 $. 
+Setting $b$ to 130 produced a lower error than at 140.  We kept moving our $b$ value lower until we set $b$ = 100, at which point our error began to increase.  Therefore, we know that a value of $b$ between 110 and 100 produces the smallest RSS for our data while $m = 1.417$. 
 
 This changing output of RSS based on a changing input of different regression lines is called our **cost function**.  Let's plot this chart to see it better.
 
