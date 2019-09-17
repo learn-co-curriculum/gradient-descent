@@ -52,7 +52,7 @@ build_regression_line(budgets, revenues)
 
 
 
-Turning this into a regression formula, we have the following.
+Turning this into a regression formula, we have the following:
 
 
 ```python
