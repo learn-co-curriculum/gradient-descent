@@ -3,8 +3,8 @@
 
 ### Learning Objectives 
 
-* Understand how to go from RSS to finding a "best fit" line
-* Understand a cost curve and what it displays
+- Understand how to go from RSS to finding a "best fit" line
+- Understand a cost curve and what it displays
 
 ### Introduction
 
